@@ -1,8 +1,8 @@
 locals {
-    project_name = "cloud-infrastructure-lab"
+  project_name = "cloud-infrastructure-lab"
 
-    common_tags = {
-        Project = local.project_name
-        ManagedBy = "Terraform"
-    }
+  common_tags = {
+    Project   = local.project_name
+    ManagedBy = "Terraform"
+  }
 }

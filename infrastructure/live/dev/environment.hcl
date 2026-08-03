@@ -1,7 +1,7 @@
 locals {
-    environment = "dev"
+  environment = "dev"
 
-    environment_tags = {
-        Environment = local.environment
-    }
+  environment_tags = {
+    Environment = local.environment
+  }
 }
