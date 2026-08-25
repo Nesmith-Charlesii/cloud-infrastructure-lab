@@ -1,5 +1,5 @@
 include "root" {
-  path = find_in_parent_folders("root.hcl")
+  path   = find_in_parent_folders("root.hcl")
   expose = true
 }
 
@@ -14,8 +14,9 @@ locals {
     find_in_parent_folders("region.hcl")
   )
 
-  environment = local.environment_config.locals.environment
-  region = local.region_config.locals.aws_region
+  environment        = local.environment_config.locals.environment
+  region             = local.region_config.locals.aws_region
+  availability_zones = local.region_config.locals.aws_availability_zones
 }
 
 
@@ -24,12 +25,14 @@ terraform {
 }
 
 inputs = {
-  name = "${local.name}"
+  name = "${local.name}-${local.environment}-vpc"
 
   environment = local.environment
-  region = local.region
+  region      = local.region
 
   vpc_cidr = "10.0.0.0/16"
+
+  availability_zones = local.availability_zones
 
   public_subnet_cidrs = [
     "10.0.1.0/24",

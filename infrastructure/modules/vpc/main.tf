@@ -3,5 +3,7 @@ resource "aws_vpc" "this" {
 
   tags = {
     Name = var.name
+    Environment = var.environment
+    Region = var.region
   }
 }

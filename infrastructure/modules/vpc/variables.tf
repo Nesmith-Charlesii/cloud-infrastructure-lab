@@ -3,13 +3,23 @@ variable "name" {
   type        = string
 }
 
+variable "environment" {
+  description = "Environment for the VPC and related resources"
+  type        = string
+}
+
+variable "region" {
+  description = "AWS region for the VPC and related resources"
+  type        = string
+}
+
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
 }
 
 variable "availability_zones" {
-  description = "CIDR blocks for public subnets"
+  description = "Availability Zones used by the subnets"
   type        = list(string)
 }
 
