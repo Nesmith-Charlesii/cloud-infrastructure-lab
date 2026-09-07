@@ -43,4 +43,6 @@ inputs = {
     "10.0.10.0/24",
     "10.0.11.0/24"
   ]
+
+  enable_nat_gateway = false
 }
